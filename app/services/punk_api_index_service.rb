@@ -1,4 +1,4 @@
-class PunkApiService
+class PunkApiIndexService
   class PunkError < StandardError; end
   PunkResponse  = Struct.new :success?, :errors, :payload, keyword_init: true
   

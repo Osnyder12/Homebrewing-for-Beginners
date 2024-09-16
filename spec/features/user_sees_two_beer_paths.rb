@@ -18,8 +18,8 @@ feature "User can see two tiles for starter recipes and brewdog recipes" do
 
   scenario "User clocls a link to visit a brewdog recipe index page" do
     visit '/'
-    find("a[href='#{punk_beers_path}']").click
+    find("a[href='#{external_beers_path}']").click
 
-    expect(page).to have_current_path("/punk_beers")
+    expect(page).to have_current_path("/external_beers")
   end
 end

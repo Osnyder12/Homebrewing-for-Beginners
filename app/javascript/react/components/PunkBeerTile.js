@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const PunkBeerTile = (props) => {
   return (
     <div>
-      <Link to={`/punk_beers/${props.id}`}>
+      <Link to={`/external_beers/${props.id}`}>
         <div className="column-4">
           <h3 className="beer-text">{props.name}</h3>
           <div className="beer-specs">

@@ -4,48 +4,48 @@ const IngredientsList = (props) => {
   let maltList = props.malts.map((malt) => {
     return (
       <li>
-        {malt.name}: {malt.amount_value} {malt.amount_unit}
+        {malt.name}: {malt.amount.value} {malt.amount.unit}
       </li>
     );
   });
 
   let hopStartList = props.hops.map((hop) => {
-    if (hop.add_time == "start") {
+    if (hop.add == "start") {
       return (
         <div>
           <li>
-            {hop.name}: {hop.amount_value} {hop.amount_unit}
+            {hop.name}: {hop.amount.value} {hop.amount.unit}
           </li>
         </div>
       );
     }
   });
   let hopMiddleList = props.hops.map((hop) => {
-    if (hop.add_time == "middle") {
+    if (hop.add == "middle") {
       return (
         <div>
           <li>
-            {hop.name}: {hop.amount_value} {hop.amount_unit}
+            {hop.name}: {hop.amount.value} {hop.amount.unit}
           </li>
         </div>
       );
     }
   });
   let hopEndList = props.hops.map((hop) => {
-    if (hop.add_time == "end") {
+    if (hop.add == "end") {
       return (
         <div>
           <li>
-            {hop.name}: {hop.amount_value} {hop.amount_unit}
+            {hop.name}: {hop.amount.value} {hop.amount.unit}
           </li>
         </div>
       );
     }
   });
 
-  let yeastList = props.yeast.map((yeast) => {
-    return <ul>1 packet of {yeast.name}</ul>;
-  });
+  const yeastList = () => {
+    return <ul>1 packet of {props.yeast} yeast</ul>;
+  };
 
   return (
     <div>
@@ -69,7 +69,7 @@ const IngredientsList = (props) => {
       </div>
       <div className="column-8">
         <h3>Yeast:</h3>
-        {yeastList}
+        {yeastList()}
       </div>
     </div>
   );
